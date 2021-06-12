@@ -1,0 +1,16 @@
+
+.cardsection{
+    transition: all 0.3s ease-in-out 0s;
+    border-radius: 6px;
+    border: 1px solid rgb(243, 243, 243);
+}
+
+.cardsection:hover{
+    box-shadow: rgb(0 0 0 / 8%) 0px 2px 4px;
+    transform: translateY(-5px);
+}
+.buy:hover{
+    background-color: rgb(1, 147, 118);
+    border-color: rgb(1, 147, 118);
+    color: rgb(255, 255, 255);
+}
