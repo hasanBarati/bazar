@@ -27,12 +27,12 @@ const Data={
     },
 
     fruit:{
-        id:1,
+        id:2,
         title:'fruit',
         linkurl:'fruit',
         items:[
             {
-                id:1,
+                id:3,
                 name:'lime',
                 category:'fruit',
                 price:'200',
@@ -41,7 +41,7 @@ const Data={
             },
 
             {
-                id:2,
+                id:4,
                 name:'lemon',
                 category:'fruit',
                 price:'150',
