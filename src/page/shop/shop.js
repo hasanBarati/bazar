@@ -9,7 +9,8 @@ import {connect} from 'react-redux'
 import Data from '../../data'
 import {fetchStart} from '../../redux/shop/shop-actions'
 import WithSpinner from '../../components/withspinner/whitspinner'
-
+import CollectionOverview from '../../components/collectionoverview/collectionovervie'
+const Collectionoverviewswithspinner= WithSpinner(CollectionOverview)
 const Shop=({match,fetchStart,data,isFetching})=>{
  
     /*useEffect(()=>{
@@ -25,21 +26,17 @@ const Shop=({match,fetchStart,data,isFetching})=>{
     return(
        
         <div className="row mb-4">
-            <div className="col-md-9 mb-4">
-                <div className="row m-4">
-                    {
+            
                  
-                 isFetching?<p>...isloading</p>:
-                 data.map(({id,...otherprops})=>
-                       <Route exact path={`${match.path}`} render={()=><Card  key={id} {...otherprops}/>}  />
+                      <Route exact path={`${match.path}`} render={(props)=><Collectionoverviewswithspinner  isLoading={isFetching} {...props}/>}  /> 
+                     { <Route path={`${match.path}/:category/:title`} component={Category}/>} 
+                {/* //  data.map(({id,...otherprops})=>
+                //        <Route exact path={`${match.path}`} render={()=><Card  key={id} {...otherprops}/>}  />
                    
-                        )}
-                      <Route path={`${match.path}/:category/:title`} component={Category}/>
+                //         )}
+                //       <Route path={`${match.path}/:category/:title`} component={Category}/> */}
                       
-                </div>
-                
-                
-            </div>
+             
             <div className="col-md-3 mb-4">
                 <div className="row m-4">
                 {viewdata.map(({id,title})=>
