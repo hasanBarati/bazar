@@ -1,31 +1,41 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './shop.style.css'
 import { Link,Route } from 'react-router-dom'
 import Fruit from '../../assests/svg/fruit.svg'
 import Card from './card/card.component'
+import {AddCollectionAndDoc} from '../../firebase/firebase'
 import Category from './category/category.component'
+import {connect} from 'react-redux'
 import Data from '../../data'
-const Shop=({match})=>{
+import {fetchStart} from '../../redux/shop/shop-actions'
+import WithSpinner from '../../components/withspinner/whitspinner'
+
+const Shop=({match,fetchStart,data,isFetching})=>{
+ 
+    /*useEffect(()=>{
+        AddCollectionAndDoc ('collections',viewdata.map(({title,items})=>({title,items})))
+       })*/
+
+     useEffect(()=>{
+       fetchStart()
+  
+     },[fetchStart] )
     const viewdata= Object.keys(Data).map(key=>Data[key])
-   
+    
     return(
+       
         <div className="row mb-4">
             <div className="col-md-9 mb-4">
                 <div className="row m-4">
-                    {viewdata.map(({id,...otherprops})=>
-                        
-
-
-                       <Route exact path={`${match.path}`} render={()=><Card key={id} {...otherprops}/>}  />
-
-
-
-
-                        // <Card key={id} {...otherprops} />
-                        
+                    {
+                 
+                 isFetching?<p>...isloading</p>:
+                 data.map(({id,...otherprops})=>
+                       <Route exact path={`${match.path}`} render={()=><Card  key={id} {...otherprops}/>}  />
+                   
                         )}
-                    
-
+                      <Route path={`${match.path}/:category/:title`} component={Category}/>
+                      
                 </div>
                 
                 
@@ -54,12 +64,19 @@ const Shop=({match})=>{
            
             
        
-            <Route path={`${match.path}/:category/:title`} component={Category}/>
+          
         </div>
         
     )
    
   
 }
-
-export default Shop
+const mapStateToProps=state=>({
+    data:state.shop.shopdata? Object.keys(state.shop.shopdata).map(key=>state.shop.shopdata[key]):null,
+    isFetching:state.shop.isFetching
+   
+})
+const mapDispatchToProps=dispatch=>({
+    fetchStart:()=>dispatch(fetchStart())
+})
+export default connect (mapStateToProps,mapDispatchToProps)(Shop)

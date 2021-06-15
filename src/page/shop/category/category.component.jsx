@@ -10,8 +10,7 @@ function Category({match}) {
    
     return (
         <div className="row mb-4">
-            <div className="col-md-9 mb-4">
-                <div className="row m-4">
+           
                     {/* {viewdata.map(({id,...otherdata})=>
                        <Card key={id} {...otherdata}/>
                        
@@ -24,8 +23,7 @@ function Category({match}) {
 
             
 
-                </div>    
-            </div> 
+        
         </div>
     )
 }
