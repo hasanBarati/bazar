@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import {Route,Switch} from 'react-router-dom'
+import {Route,Switch,Link} from 'react-router-dom'
 import Header from './components/header/header.component'
 import Shop from './page/shop/shop'
 import HomePage from './page/homepage/homepage'
 import Category from './page/shop/category/category.component'
+import CartIcon from './components/carticon/carticon'
 function App() {
   return (
     <div className="App">
@@ -16,7 +17,9 @@ function App() {
        <Route path="/category" component={Category}/>
    </Switch>
 </div>     
-
+    <div className="position-fixed top-50 start-10">
+    <Link to="/" className="navbar-brand" > <CartIcon /> </Link>
+    </div>
 </div>
   );
 }

@@ -2,14 +2,14 @@ import React,{useEffect} from 'react'
 import './shop.style.css'
 import { Link,Route } from 'react-router-dom'
 import Fruit from '../../assests/svg/fruit.svg'
-import Card from './card/card.component'
-import {AddCollectionAndDoc} from '../../firebase/firebase'
+
 import Category from './category/category.component'
 import {connect} from 'react-redux'
-import Data from '../../data'
+
 import {fetchStart} from '../../redux/shop/shop-actions'
 import WithSpinner from '../../components/withspinner/whitspinner'
-
+import CollectionOverview from '../../components/collectionoverview/collectionovervie'
+const Collectionoverviewswithspinner= WithSpinner(CollectionOverview)
 const Shop=({match,fetchStart,data,isFetching})=>{
  
     /*useEffect(()=>{
@@ -20,29 +20,21 @@ const Shop=({match,fetchStart,data,isFetching})=>{
        fetchStart()
   
      },[fetchStart] )
-    const viewdata= Object.keys(Data).map(key=>Data[key])
+  //  const viewdata= Object.keys(Data).map(key=>Data[key])
     
     return(
        
-        <div className="row mb-4">
-            <div className="col-md-9 mb-4">
-                <div className="row m-4">
-                    {
+             <div className="row mb-4">
+               <div className="col-md-9 mb-4">
                  
-                 isFetching?<p>...isloading</p>:
-                 data.map(({id,...otherprops})=>
-                       <Route exact path={`${match.path}`} render={()=><Card  key={id} {...otherprops}/>}  />
-                   
-                        )}
+                      <Route exact path={`${match.path}`} render={(props)=><Collectionoverviewswithspinner  isLoading={isFetching} {...props}/>}  /> 
                       <Route path={`${match.path}/:category/:title`} component={Category}/>
+               
                       
-                </div>
-                
-                
             </div>
             <div className="col-md-3 mb-4">
                 <div className="row m-4">
-                {viewdata.map(({id,title})=>
+                {data?data.map(({id,title})=>
                     <div className="col-md-5 bg-white m-1 p-3">
                     <Link to={`${match.path}/category/${title}`}>
                             
@@ -54,7 +46,7 @@ const Shop=({match,fetchStart,data,isFetching})=>{
                         <p className="text-center mt-2">{title}</p>
                     </Link>  
                     </div>
-                    )}
+                    ):null}
            
                    
                     

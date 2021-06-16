@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import './header.style.css'
+import CartIcon from '../carticon/carticon'
 const Header=()=>{
     return(
         <nav className="navbar navbar-expand-lg navbar-light bg-white">
@@ -14,7 +15,7 @@ const Header=()=>{
                  
             </ul>
           </div>
-          <Link to="/" className="navbar-brand" >logo</Link>
+         
          
         
           </div>
