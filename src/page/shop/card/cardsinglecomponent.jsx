@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addItem} from '../../../redux/cart/cart-action'
-function CardSingle({item,addItem}) {
+const CardSingle=({item,addItem})=> {
     const {name,price,imgurl}=item
    
     return (

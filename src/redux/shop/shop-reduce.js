@@ -8,11 +8,11 @@ const INITIAL_STATE={
 
 const shopReducer=(state=INITIAL_STATE,action)=>{
      switch(action.type){
-         case SHOPTYPE.UPDATE_DATA:
-             return{
-                 ...state,
-                 shopdata:action.payload
-             }
+        //  case SHOPTYPE.UPDATE_DATA:
+        //      return{
+        //          ...state,
+        //          shopdata:action.payload
+        //      }
          case SHOPTYPE.FETCH_COLLECTION_START:
              return{
                  ...state,
@@ -31,10 +31,8 @@ const shopReducer=(state=INITIAL_STATE,action)=>{
                     isFetching:false,
                     errorMessage:action.payload
                 }            
-         default:
-             return{
-                 state
-             }    
+         default:return state
+               
      }
 
 

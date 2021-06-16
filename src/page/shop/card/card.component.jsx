@@ -2,14 +2,14 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {addItem} from '../../../redux/cart/cart-action'
 import CardSingle from './cardsinglecomponent'
-function Card({items,addItem}) {
+const Card=({items,addItem})=> {
   
     return (
       
-        items.map(item=>
-
+        items.map(item=>(
+           
              <CardSingle key={item.id} item={item} />
-       )
+         ) )
           
     )
 }

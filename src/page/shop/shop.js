@@ -2,15 +2,16 @@ import React,{useEffect} from 'react'
 import './shop.style.css'
 import { Link,Route } from 'react-router-dom'
 import Fruit from '../../assests/svg/fruit.svg'
-
+import {createStructuredSelector} from 'reselect'
+import {selectIsCollectionFetching,selectIsCollectionsLoaded} from '../../redux/shop/shop-selector'
 import Category from './category/category.component'
 import {connect} from 'react-redux'
-
+import Data from '../../data'
 import {fetchStart} from '../../redux/shop/shop-actions'
 import WithSpinner from '../../components/withspinner/whitspinner'
 import CollectionOverview from '../../components/collectionoverview/collectionovervie'
 const Collectionoverviewswithspinner= WithSpinner(CollectionOverview)
-const Shop=({match,fetchStart,data,isFetching})=>{
+const Shop=({match,fetchStart,data,isCollectionsFetching})=>{
  
     /*useEffect(()=>{
         AddCollectionAndDoc ('collections',viewdata.map(({title,items})=>({title,items})))
@@ -20,14 +21,14 @@ const Shop=({match,fetchStart,data,isFetching})=>{
        fetchStart()
   
      },[fetchStart] )
-  //  const viewdata= Object.keys(Data).map(key=>Data[key])
+  const viewdata= Object.keys(Data).map(key=>Data[key])
     
     return(
        
              <div className="row mb-4">
                <div className="col-md-9 mb-4">
                  
-                      <Route exact path={`${match.path}`} render={(props)=><Collectionoverviewswithspinner  isLoading={isFetching} {...props}/>}  /> 
+                      <Route exact path={`${match.path}`} render={(props)=><Collectionoverviewswithspinner  isLoading={isCollectionsFetching} {...props}/>}  /> 
                       <Route path={`${match.path}/:category/:title`} component={Category}/>
                
                       
@@ -63,8 +64,14 @@ const Shop=({match,fetchStart,data,isFetching})=>{
    
   
 }
+
+
+// const mapStateToProps=createStructuredSelector({
+//     isCollectionsFetching:selectIsCollectionFetching
+//    //isCollectionsLoaded:selectIsCollectionsLoaded
+//   })
 const mapStateToProps=state=>({
-    data:state.shop.shopdata? Object.keys(state.shop.shopdata).map(key=>state.shop.shopdata[key]):null,
+    data:state.shop.shopdata? Object.keys(state.shop.shopdata).map(key=>state.shop.shopdata[key]):[],
     isFetching:state.shop.isFetching
    
 })

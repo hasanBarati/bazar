@@ -18,7 +18,8 @@ function App() {
    </Switch>
 </div>     
     <div className="position-fixed top-50 start-10">
-    <Link to="/" className="navbar-brand" > <CartIcon /> </Link>
+    <Link to="/" className=" text-white" > <CartIcon /> </Link>
+
     </div>
 </div>
   );
