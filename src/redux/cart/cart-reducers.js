@@ -23,15 +23,15 @@ const initial_state={
                 ...state,
                 cartItems:RemoveItemFromCart(state.cartItems,action.payload)
             }       
-        case CARTTYPE.REMOVE_ITEM_CART:
-            return{
-                ...state,
-                cartItems:state.cartItems.filter(cartitem=>cartitem.id != action.payload.id)
-            } 
+        // case CARTTYPE.REMOVE_ITEM_CART:
+        //     return{
+        //         ...state,
+        //         cartItems:state.cartItems.filter(cartitem=>cartitem.id != action.payload.id)
+        //     } 
         case CARTTYPE.CLEAR_CART:
             return{
                 ...state,
-                cartItems:[]
+                cartItems:state.cartItems.filter(cartitem=>cartitem.id != action.payload.id)
             }  
             default:return state      
     }

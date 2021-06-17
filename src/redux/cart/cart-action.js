@@ -14,6 +14,7 @@ export const removeItem=item=>({
     payload:item
 })
 
-export const clearCart=()=>({
-    type:CARTTYPE.CLEAR_CART
+export const clearCart=item=>({
+    type:CARTTYPE.CLEAR_CART,
+    payload:item
 })

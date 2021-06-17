@@ -6,6 +6,7 @@ import Shop from './page/shop/shop'
 import HomePage from './page/homepage/homepage'
 import Category from './page/shop/category/category.component'
 import CartIcon from './components/carticon/carticon'
+import CartSection from './page/cartsection/cartsecton'
 function App() {
   return (
     <div className="App">
@@ -17,10 +18,10 @@ function App() {
        <Route path="/category" component={Category}/>
    </Switch>
 </div>     
-    <div className="position-fixed top-50 start-10">
-   <CartIcon /> 
+   
+   <CartSection /> 
 
-    </div>
+    
 </div>
   );
 }

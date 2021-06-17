@@ -1,0 +1,26 @@
+
+.carddropwn{
+    box-shadow: rgb(0 0 0 / 16%) 0px 21px 36px;
+    transition: all 0.35s ease-in-out 0s;
+    width: 400px;
+    position: relative;
+}
+.carddropwn img{
+    width: 50px;
+}
+.cartheader{
+    color: #009e7f;
+}
+
+
+.checkoutbtn.btn {
+    background: #009e7f;
+    color: white;
+    width: 80%;
+    position: absolute;
+    left: auto;
+    right: auto;
+    bottom: 50px;
+    margin: 0 auto;
+    transform: translate(50%, 50%);
+}

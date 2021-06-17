@@ -1,5 +1,9 @@
-.cartbox{
+.cartbox {
     background-color: #009e7f;
+    width: 120px;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
 }
 .price{
     color:#009e7f;
