@@ -4,7 +4,7 @@ import Card from '../../page/shop/card/card.component'
 import {selectCollectionForOverview} from '../../redux/shop/shop-selector'
 import {createStructuredSelector} from 'reselect'
 const CollectionOverview=({isLoading,data})=> {
-  console.log(data)
+  
     return (
        
          <div className="row m-4">
