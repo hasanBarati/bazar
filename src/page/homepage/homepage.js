@@ -1,45 +1,23 @@
 import React from 'react'
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import HeaderSlider from './headerslider/headerslider'
+import Content from './content/content'
+import {connect} from 'react-redux'
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper.scss';
-import 'swiper/components/navigation/navigation.scss';
-import 'swiper/components/pagination/pagination.scss';
-import 'swiper/components/scrollbar/scrollbar.scss';
-
-
-
-  
-
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
-const HomePage=()=>{
+const HomePage=({data})=>{
     return(
         <div>
- <Swiper
-      spaceBetween={50}
-      slidesPerView={1}
-      navigation
-      pagination={{ 'clickable': true,"dynamicBullets": true}}
-  
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
-    >
-      <SwiperSlide><img src="https://mimazy.com/storage/images/banners/2021/05/7sgbv7CaOXIRbpyKNShMEygpNNrvLSZynPLFMxqvTCYUsnQsCjoukzoTDP1mrpNq-1350x400.png" /></SwiperSlide>
-      <SwiperSlide><img src="https://mimazy.com/storage/images/banners/2021/05/Gy11yC7Sr6SyXMJWNnqkjDosRPtyHWniiLM0QbHwkcKVkjLp7epURwb5idh7VHDc-1350x400.png" /></SwiperSlide>
-      <SwiperSlide><img src="https://mimazy.com/storage/images/banners/2021/04/uOyKqr18QaqBeOZofxoa5ADSQNBujvjwKrn5pIg4b6vD6yjGafFqTRMDVHv3WkPv-1350x400.png" /></SwiperSlide>
-      <SwiperSlide><img src="https://mimazy.com/storage/images/banners/2021/04/uSyjfKUcbt3JVHNZ3j9OTKJxRF0aWOZTeCLruTWjQsPSDvjNVzFuSnLek34apsoB-1350x400.png" /></SwiperSlide>
-   
-    </Swiper>
 
-
-
-
-
-
-
-
+             <HeaderSlider/>
+             {data.map(({id,...otherdata})=>
+              
+              <Content key={id} {...otherdata}/>
+              )}
+           
         </div>
     )
 }
-
-export default HomePage
+const mapStateToProps=state=>({
+  data:state.shop.shopdata? Object.keys(state.shop.shopdata).map(key=>state.shop.shopdata[key]):[]
+  
+})
+export default connect(mapStateToProps)(HomePage)
