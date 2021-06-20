@@ -1,9 +1,16 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import HeaderSlider from './headerslider/headerslider'
 import Content from './content/content'
 import {connect} from 'react-redux'
+import {fetchStart} from '../../redux/shop/shop-actions'
+const HomePage=({data,fetchStart})=>{
 
-const HomePage=({data})=>{
+
+  useEffect(()=>{
+    fetchStart()
+
+  },[fetchStart] )
+  
     return(
         <div>
 
@@ -20,4 +27,7 @@ const mapStateToProps=state=>({
   data:state.shop.shopdata? Object.keys(state.shop.shopdata).map(key=>state.shop.shopdata[key]):[]
   
 })
-export default connect(mapStateToProps)(HomePage)
+const mapDispatchToProps=dispatch=>({
+  fetchStart:()=>dispatch(fetchStart())
+})
+export default connect(mapStateToProps,mapDispatchToProps)(HomePage)
