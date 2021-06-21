@@ -16,7 +16,7 @@ function Category({match}) {
                        
                    )}   */}
                 
-                       <Card  items={viewdata}/>
+                       <Card  items={viewdata} match={match}/>
                        
                         
 

@@ -1,12 +1,20 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addItem} from '../../../redux/cart/cart-action'
-const CardSingle=({item,addItem})=> {
-    const {name,price,imgurl}=item
+import { Route,Link } from 'react-router-dom'
+import SingleProduct from '../../singleproduct/singleproduct'
+const CardSingle=({item,addItem,match})=> {
+    const {name,price,imgurl,category}=item
    
     return (
+    
+
+         
         <div  className="cardsection col-md-3   p-0 bg-white ">
+            
+            <Link to={`/shop/${name}`}>
            <div className="view zoom z-depth-2 rounded">
+
                 <img className="w-100" src={imgurl} />
   
            </div>
@@ -21,9 +29,14 @@ const CardSingle=({item,addItem})=> {
                   <span className="decrease d-none">-</span>   افزودن به سبد خرید   <span className="increase">+</span>
             </button>
            </div>
-        </div>   
+           </Link> 
+        </div>  
+       
+      
     )
+    
 }
+
 const mapDispatchToProps=dispatch=>({
     addItem:item=>dispatch(addItem(item))
 })

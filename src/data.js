@@ -21,6 +21,7 @@ const Data={
                 imgurl:'https://res.cloudinary.com/redq-inc/image/upload/c_fit,q_auto:best,w_300/v1589736058/pickbazar/grocery/halibut_jaz7ju.jpg'
 
             },
+            
 
 
         ]
