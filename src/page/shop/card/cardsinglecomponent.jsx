@@ -34,12 +34,12 @@ const CardSingle=({item,addItem,match})=> {
                 <span className="d-flex justify-content-end">{price} </span>
                 
             </div>
-    
-              <button className="buy btn btn-light mt-2" onClick={()=>addItem(item)}>
+            </div>
+           </Link> 
+              <button className="buy btn btn-light mt-2 mb-4" onClick={()=>addItem(item)}>
                   <span className="decrease d-none">-</span>   افزودن به سبد خرید   <span className="increase">+</span>
             </button>
-           </div>
-           </Link> 
+           
      
         
       

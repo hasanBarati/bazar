@@ -3,6 +3,7 @@ import './shop.style.css'
 import { Link,Route } from 'react-router-dom'
 import Fruit from '../../assests/svg/fruit.svg'
 import {createStructuredSelector} from 'reselect'
+import {AddCollectionAndDoc} from '../../firebase/firebase'
 import {selectIsCollectionFetching,selectIsCollectionsLoaded} from '../../redux/shop/shop-selector'
 import Category from './category/category.component'
 import {connect} from 'react-redux'
@@ -18,12 +19,13 @@ const Shop=({match,fetchStart,data,isCollectionsFetching})=>{
         AddCollectionAndDoc ('collections',viewdata.map(({title,items})=>({title,items})))
        })*/
 
-
+      // const viewdata= Object.keys(Data).map(key=>Data[key])
      useEffect(()=>{
+     //   AddCollectionAndDoc ('collections',viewdata.map(({title,items})=>({title,items})))
        fetchStart()
   
      },[fetchStart] )
-  const viewdata= Object.keys(Data).map(key=>Data[key])
+ 
     
     return(
        

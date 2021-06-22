@@ -1,0 +1,8 @@
+.productinfo{
+    border-left: 1px solid #eaeaea;
+}
+
+button.buy{
+    background: #009e7f;
+    color: white;
+}
