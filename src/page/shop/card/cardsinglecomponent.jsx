@@ -1,18 +1,28 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addItem} from '../../../redux/cart/cart-action'
-import { Route,Link } from 'react-router-dom'
+import { Route,Link,withRouter,Router } from 'react-router-dom'
 import SingleProduct from '../../singleproduct/singleproduct'
+
 const CardSingle=({item,addItem,match})=> {
-    const {name,price,imgurl,category}=item
+    const {name,price,imgurl,id,category}=item
    
     return (
     
 
          
         <div  className="cardsection col-md-3   p-0 bg-white ">
+
+
+            <Link to={{ 
+            pathname: "/singleproduct", 
+            state:item
+            }}>
+
+
+
             
-            <Link to={`/shop/${name}`}>
+            {/* <Link to={`/singleproduct`}> */}
            <div className="view zoom z-depth-2 rounded">
 
                 <img className="w-100" src={imgurl} />
@@ -30,6 +40,11 @@ const CardSingle=({item,addItem,match})=> {
             </button>
            </div>
            </Link> 
+     
+        
+      
+           
+          
         </div>  
        
       
@@ -40,4 +55,4 @@ const CardSingle=({item,addItem,match})=> {
 const mapDispatchToProps=dispatch=>({
     addItem:item=>dispatch(addItem(item))
 })
-export default connect(null,mapDispatchToProps)(CardSingle)
+export default withRouter (connect(null,mapDispatchToProps)(CardSingle))

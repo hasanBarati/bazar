@@ -32,7 +32,7 @@ const Shop=({match,fetchStart,data,isCollectionsFetching})=>{
                  
                       <Route exact path={`${match.path}`} render={(props)=><Collectionoverviewswithspinner  isLoading={isCollectionsFetching} {...props}/>}  /> 
                       <Route path={`${match.path}/:category/:title`} component={Category}/>
-                      <Route path={`${match.path}/:name`} component={SingleProduct}  />
+                   
                
                       
             </div>

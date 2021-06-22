@@ -7,6 +7,7 @@ import HomePage from './page/homepage/homepage'
 import Category from './page/shop/category/category.component'
 import CartIcon from './components/carticon/carticon'
 import CartSection from './page/cartsection/cartsecton'
+
 import SingleProduct from './page/singleproduct/singleproduct'
 function App() {
   return (
