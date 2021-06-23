@@ -5,7 +5,7 @@ import Header from './components/header/header.component'
 import Shop from './page/shop/shop'
 import HomePage from './page/homepage/homepage'
 import Category from './page/shop/category/category.component'
-import CartIcon from './components/carticon/carticon'
+import Checkout from './page/checkout/checkout'
 import CartSection from './page/cartsection/cartsecton'
 
 import SingleProduct from './page/singleproduct/singleproduct'
@@ -19,6 +19,7 @@ function App() {
        <Route path="/shop" component={Shop}/>
        <Route path="/category" component={Category}/>
        <Route path="/singleproduct" component={SingleProduct}/>
+       <Route path='/checkout' component={Checkout} />
    </Switch>
 </div>     
    

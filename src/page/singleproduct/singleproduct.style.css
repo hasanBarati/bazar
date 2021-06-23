@@ -6,3 +6,9 @@ button.buy{
     background: #009e7f;
     color: white;
 }
+.relatedproduct{
+    margin:50px auto;
+}
+/* .relatedproduct .cardsection{
+    margin:0 5px;
+} */

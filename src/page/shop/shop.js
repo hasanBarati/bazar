@@ -2,6 +2,7 @@ import React,{useEffect} from 'react'
 import './shop.style.css'
 import { Link,Route } from 'react-router-dom'
 import Fruit from '../../assests/svg/fruit.svg'
+import Meat from '../../assests/svg/meat.svg'
 import {createStructuredSelector} from 'reselect'
 import {AddCollectionAndDoc} from '../../firebase/firebase'
 import {selectIsCollectionFetching,selectIsCollectionsLoaded} from '../../redux/shop/shop-selector'
@@ -19,9 +20,9 @@ const Shop=({match,fetchStart,data,isCollectionsFetching})=>{
         AddCollectionAndDoc ('collections',viewdata.map(({title,items})=>({title,items})))
        })*/
 
-      // const viewdata= Object.keys(Data).map(key=>Data[key])
+     const viewdata= Object.keys(Data).map(key=>Data[key])
      useEffect(()=>{
-     //   AddCollectionAndDoc ('collections',viewdata.map(({title,items})=>({title,items})))
+       AddCollectionAndDoc ('collections',viewdata.map(({title,items})=>({title,items})))
        fetchStart()
   
      },[fetchStart] )
@@ -40,13 +41,13 @@ const Shop=({match,fetchStart,data,isCollectionsFetching})=>{
             </div>
             <div className="col-md-3 mb-4">
                 <div className="row m-4">
-                {data.map(({id,title})=>
+                {viewdata.map(({id,title,icon})=>
                     <div className="col-md-5 bg-white m-1 p-3">
                     <Link to={`${match.path}/category/${title}`}>
                             
                         
                         <div className="icon">
-                        <img src={Fruit} width="100" height="50" /> 
+                        <img src={icon} width="100" height="50" /> 
                          
                         </div>
                         <p className="text-center mt-2">{title}</p>

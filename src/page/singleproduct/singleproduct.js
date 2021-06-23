@@ -2,13 +2,15 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {addItem} from '../../redux/cart/cart-action'
 import './singleproduct.style.css'
+import CardSingle from '../shop/card/cardsinglecomponent'
 const SingleProduct=({location,addItem,data})=> {
 
    //const location = useLocation()
+   
     const {id,category,imgurl,name,price} =location.state;
-    const findproduct=data[location.state.category].items.filter(item=>item.category==location.state.category).find(item=>item.name!=location.state.name)
+    const relatedproduct=data[location.state.category].items.filter(item=>item.category==location.state.category && item.name !=location.state.name )
 
-    console.log(findproduct)
+  
     return (
         <div className='row'>
             <div className="productinfo col-md-6 bg-white p-5 text-end">
@@ -27,12 +29,17 @@ const SingleProduct=({location,addItem,data})=> {
              </div>
              
 
-            {/* <div className="row">
-            {findproduct.map(item=>
-                 <p>{item.name}</p> 
+            <div className="row relatedproduct w-75 d-flex justify-center">
+              
+
                 
-                )}
-            </div> */}
+                    {relatedproduct.map(item=>
+                        
+                        <CardSingle key={item.id} item={item} />
+                        
+                        )}
+               
+            </div>
         </div>
     )
 }

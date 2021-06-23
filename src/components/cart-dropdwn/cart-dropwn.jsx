@@ -4,8 +4,10 @@ import {selectCartItems,selectCartItemsCount} from '../../redux/cart/cart-select
 import {ReactComponent as ShopingIcon} from '../../assests/svg/cart.svg'
 import { createStructuredSelector } from 'reselect'
 import {connect} from 'react-redux'
+import {withRouter} from 'react-router-dom'
 import {removeItem,addItem,clearCart,toggleCart} from '../../redux/cart/cart-action'
-const CartDropDown=({cartItems,addItem,removeItem,clearCart,toggleCart,cartItemsCount})=>{
+const CartDropDown=({cartItems,addItem,removeItem,clearCart,toggleCart,cartItemsCount,history,dispatch})=>{
+    console.log(history)
     return (
         <div className="carddropwn p-3 h-100  bg-white rounded ">
             <div className="cartheader d-flex justify-content-between ">
@@ -28,7 +30,7 @@ const CartDropDown=({cartItems,addItem,removeItem,clearCart,toggleCart,cartItems
                 <span>{item.name}</span>
                 </div>
            )):null}
-           <button className="checkoutbtn btn">پرداخت</button>
+           <button className="checkoutbtn btn" onClick={()=>{history.push('/checkout');{toggleCart()}}}>پرداخت</button>
         </div>
     )
 }
@@ -43,4 +45,4 @@ const mapDispatchToProps=dispatch=>({
     toggleCart:()=>dispatch(toggleCart())
    
 })
-export default connect(mapStateToProps,mapDispatchToProps)( CartDropDown)
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)( CartDropDown))

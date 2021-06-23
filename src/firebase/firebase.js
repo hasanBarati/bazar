@@ -16,20 +16,20 @@ firebase.initializeApp(config);
 
 
 
-//   export const AddCollectionAndDoc=async (collectionKey,objectADD)=>{
-//     const collectionRef=firestore.collection(collectionKey)
+  export const AddCollectionAndDoc=async (collectionKey,objectADD)=>{
+    const collectionRef=firestore.collection(collectionKey)
   
          
-//     const batch=firestore.batch()
-//     objectADD.forEach(obj => {
-//       const newDocRef=collectionRef.doc()
+    const batch=firestore.batch()
+    objectADD.forEach(obj => {
+      const newDocRef=collectionRef.doc()
   
-//     batch.set(newDocRef,obj)
+    batch.set(newDocRef,obj)
   
-//   })
+  })
   
-//   return await  batch.commit()
-// }
+  return await  batch.commit()
+}
 
   export const convertCollectionsSnapshotToMap = (collections) => {
     const transformedCollection = collections.docs.map((doc) => {
