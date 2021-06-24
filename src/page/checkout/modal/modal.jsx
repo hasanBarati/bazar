@@ -6,8 +6,14 @@ const Modal=({modal})=> {
     const [items,setitem]=useState('')
 
       const handleChange=e=>{
-        const {name,value}=e.target
-        setcredintial({...usercredintial,[name]:value})
+        setitem(e.target.value)
+    }
+
+    const handleSubmit=e=>{
+        setcredintial({
+            ...usercredintial,
+            key:Date.now(),address:items
+        })
     }
     return (
 
@@ -20,12 +26,13 @@ const Modal=({modal})=> {
                     <button type="button" className="btn-close" onClick={modal} aria-label="Close"></button>
                 </div>
                 <div className="modal-body">
-                    <input type="text" />
+                    
+                    <input type="text" onChange={handleChange}/>
                     <textarea />
                 </div>
                 <div className="modal-footer">
                    
-                    <button type="button" className="btn btn-primary">Save changes</button>
+                    <button type="button" className="btn btn-primary" onClick={handleSubmit}>Save changes</button>
                 </div>
                 </div>
             </div>
