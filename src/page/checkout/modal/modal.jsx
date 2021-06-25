@@ -1,20 +1,45 @@
 import React,{useState} from 'react'
 import {connect} from 'react-redux'
 import { modal } from '../../../redux/checkout/checkout-action'
-const Modal=({modal})=> {
-    const [usercredintial,setcredintial]=useState([])
+import Address from '../address/adress'
+import Checkout from '../checkout'
+const Modal=({modal,item,onSubmit})=> {
+  
     const [items,setitem]=useState('')
+   // const [usercredintial,setcredintial]=useState([])
+  
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+     
+       onSubmit(items)
+    //    onSubmit({
+    //     id:Date.now(),
+    //     text:items
+    // })
+    }
 
-      const handleChange=e=>{
+
+
+
+    const  handleEdit=(e)=>{
+        e.preventDefault();
+     
+       onSubmit(items)
+    //    onSubmit({
+    //     id:Date.now(),
+    //     text:items
+    // })
+    }
+
+   
+ 
+    
+    const handleChange=e=>{
         setitem(e.target.value)
+
     }
 
-    const handleSubmit=e=>{
-        setcredintial({
-            ...usercredintial,
-            key:Date.now(),address:items
-        })
-    }
+   
     return (
 
 
@@ -27,18 +52,20 @@ const Modal=({modal})=> {
                 </div>
                 <div className="modal-body">
                     
-                    <input type="text" onChange={handleChange}/>
+                    <input type="text" name='items' value={items} onChange={handleChange}/>
                     <textarea />
                 </div>
                 <div className="modal-footer">
                    
-                    <button type="button" className="btn btn-primary" onClick={handleSubmit}>Save changes</button>
+                <button type="button" className="btn btn-primary" onClick={handleSubmit}>Save changes</button>
+                <button type="button" className="btn btn-secondery" onClick={handleEdit}>edit</button>
                 </div>
                 </div>
             </div>
+         
         </div>
         
-    
+     
      
 
     )
