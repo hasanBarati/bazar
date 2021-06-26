@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import { modal } from '../../../redux/checkout/checkout-action'
 import Address from '../address/adress'
 import Checkout from '../checkout'
-const Modal=({modal,item,onSubmit})=> {
+const Modal=({modal,item,onSubmit,edititem})=> {
   
     const [items,setitem]=useState('')
    // const [usercredintial,setcredintial]=useState([])
@@ -23,8 +23,8 @@ const Modal=({modal,item,onSubmit})=> {
 
     const  handleEdit=(e)=>{
         e.preventDefault();
-     
-       onSubmit(items)
+     setitem(edititem.value)
+      // onSubmit(items)
     //    onSubmit({
     //     id:Date.now(),
     //     text:items
@@ -35,7 +35,7 @@ const Modal=({modal,item,onSubmit})=> {
  
     
     const handleChange=e=>{
-        setitem(e.target.value)
+    setitem(e.target.value)
 
     }
 

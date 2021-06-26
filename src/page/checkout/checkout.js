@@ -44,7 +44,7 @@ const updatelist=(key,newtext)=>{
             <div className="infobox col-md-6 bg-white p-5 m-4 text-end">
                <div className="address">
                   <div className="header">
-                       <h3 className="step d-flex">آدرس شما</h3>
+                       <h3 className="step d-flex"></h3>
                        <span className="additem" onClick={()=>modal()}>افزودن آدرس</span>
                   </div>
                 

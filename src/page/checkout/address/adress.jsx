@@ -6,7 +6,7 @@ const  Address=({items,deleteitem,updatelist,modal,hidden})=> {
    
 const [edititem,setedititem]=useState({id:null,value:''})
     const submitUpdate=value=>{
-        console.log(value)
+
         updatelist(edititem.id,value);
         setedititem({
             id:null,
@@ -14,6 +14,15 @@ const [edititem,setedititem]=useState({id:null,value:''})
         })
     }
 
+
+    const edititemcall=(id,value)=>{
+        console.log(value)
+
+       // updatelist(id,value);
+       setedititem({id,value})
+       modal()
+      // updatelist(id,value);
+    }
 
 
 return (
@@ -24,7 +33,7 @@ return (
                {item.text}
         
                  <span className="mx-1" onClick={()=>deleteitem(item.key)}>x</span>
-                 <span className="mx-1" onClick={()=>setedititem({id:item.key,value:item.text}),modal}>+</span>
+                 <span className="mx-1" onClick={()=>edititemcall(item.key,item.text)}>+</span>
             </div>
                
                
@@ -32,7 +41,7 @@ return (
                
        )
    
-       {!hidden? <Modal handleEdit={submitUpdate}/>:null}
+       {!hidden? <Modal edititem={edititem} />:null}
        </div>
 
 )
