@@ -5,23 +5,23 @@ import {connect} from 'react-redux'
 const  Address=({items,deleteitem,updatelist,modal,hidden})=> {
    
 const [edititem,setedititem]=useState({id:null,value:''})
-    const submitUpdate=value=>{
-
+    const submitUpdate=(value)=>{
+    
+       
+       // modal()
         updatelist(edititem.id,value);
-        setedititem({
+       
+       /* setedititem({
             id:null,
             value:''
-        })
+        })*/
     }
 
 
-    const edititemcall=(id,value)=>{
-        console.log(value)
-
-       // updatelist(id,value);
+   const edititemcall=(id,value)=>{
+      
        setedititem({id,value})
-       modal()
-      // updatelist(id,value);
+   
     }
 
 
@@ -41,7 +41,7 @@ return (
                
        )
    
-       {!hidden? <Modal edititem={edititem} />:null}
+       {!hidden || edititem.id ? <Modal onSubmit={submitUpdate} />:null}
        </div>
 
 )

@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import {connect} from 'react-redux'
 import { modal } from '../../../redux/checkout/checkout-action'
 import Address from '../address/adress'
@@ -6,6 +6,8 @@ import Checkout from '../checkout'
 const Modal=({modal,item,onSubmit,edititem})=> {
   
     const [items,setitem]=useState('')
+    
+  
    // const [usercredintial,setcredintial]=useState([])
   
     const handleSubmit=(e)=>{
@@ -53,6 +55,7 @@ const Modal=({modal,item,onSubmit,edititem})=> {
                 <div className="modal-body">
                     
                     <input type="text" name='items' value={items} onChange={handleChange}/>
+                   
                     <textarea />
                 </div>
                 <div className="modal-footer">

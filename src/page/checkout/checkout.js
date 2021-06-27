@@ -24,11 +24,11 @@ const deleteitem=(key)=>{
 }
 
 const updatelist=(key,newtext)=>{
-    console.log('excute')
-  const finitemtoedit=usercredintial.find(item=>item.key === key)
+  
+  //const finitemtoedit=usercredintial.find(item=>item.key === key)
   
 
-  setcredintial(prev =>prev.map(item=>(item.key === key ? newtext:item)));
+  setcredintial(prev =>prev.map(item=>(item.key === key? newtext:item)));
 
 }
 
