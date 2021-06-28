@@ -32,7 +32,15 @@ const updatelist=(key,newtext)=>{
 
 }
 
-
+const toggleactive=(itemd)=>{
+    console.log(itemd)
+  let active=  usercredintial.find(item=>item.key === itemd.id)
+    if(active){
+        console.log('exc')
+        usercredintial.active=!usercredintial.active
+    }
+      
+}
 
 // const updateTodo=(todoId,newValue)=>{
 //     setTodo(prev =>prev.map(item=>(item.id === todoId ? newValue:item)));
@@ -51,7 +59,7 @@ const updatelist=(key,newtext)=>{
                   
                     <div className="row">
                       
-                      <Address items={usercredintial} deleteitem={deleteitem} updatelist={updatelist}/>
+                      <Address items={usercredintial} toggleactive={toggleactive} deleteitem={deleteitem} updatelist={updatelist}/>
                       {/* {usercredintial?usercredintial.map(item=>
                       <Address key={item.key}
                        item={item}
