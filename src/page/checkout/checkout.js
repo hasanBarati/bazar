@@ -3,7 +3,8 @@ import {connect} from 'react-redux'
 import Modal from './modal/modal'
 import {modal} from '../../redux/checkout/checkout-action'
 import Address from './address/adress'
-//import DeliveryTime from './delivery/delivery'
+import DeliveryData from './delivery/deliverydata'
+import Delivery from './delivery/delivery'
 import './checkout.style.css'
 const Checkout=({modal,hidden,datad})=> {
 
@@ -34,19 +35,14 @@ const updatelist=(key,newtext)=>{
 }
 
 const toggleactive=(itemd)=>{
-//     console.log(itemd)
-//   let active=  usercredintial.find(item=>item.key === itemd.id)
-//     if(active){
-//         console.log('exc')
-//         usercredintial.active=!usercredintial.active
-//     }
-      
-
-
 
     let activate=usercredintial.map(item =>{
+        if(item.isCompleted===true){
+            item.isCompleted=false
+        }
         if (item.key === itemd.id){
-            item.isCompleted=!item.isCompleted
+           
+            item.isCompleted=true
         }
        return item 
     })
@@ -108,8 +104,27 @@ const toggleactive=(itemd)=>{
 
 
             <div className="infobox  bg-white p-5 m-4 text-end">
-
+            <div className="address">
+                  <div className="header">
+                       <h3 className="step d-flex">زمان تحویل</h3>
+                       
+                  </div>
+               
+                    <div className="row">
+                        <Delivery items= {DeliveryData } />
+                      {/* {DeliveryData.map(delivery=>(
+                         <Delivery key={delivery.id} items={delivery} toggleactive={toggleactive}/>
+                      ))} */}
+          
+                  </div>
+               </div>
             </div>
+
+
+
+
+
+           
 
 
 
