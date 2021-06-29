@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import Modal from './modal/modal'
 import {modal} from '../../redux/checkout/checkout-action'
 import Address from './address/adress'
+//import DeliveryTime from './delivery/delivery'
 import './checkout.style.css'
 const Checkout=({modal,hidden,datad})=> {
 
@@ -33,13 +34,32 @@ const updatelist=(key,newtext)=>{
 }
 
 const toggleactive=(itemd)=>{
-    console.log(itemd)
-  let active=  usercredintial.find(item=>item.key === itemd.id)
-    if(active){
-        console.log('exc')
-        usercredintial.active=!usercredintial.active
-    }
+//     console.log(itemd)
+//   let active=  usercredintial.find(item=>item.key === itemd.id)
+//     if(active){
+//         console.log('exc')
+//         usercredintial.active=!usercredintial.active
+//     }
       
+
+
+
+    let activate=usercredintial.map(item =>{
+        if (item.key === itemd.id){
+            item.isCompleted=!item.isCompleted
+        }
+       return item 
+    })
+    setcredintial(activate)
+
+
+
+
+
+
+
+
+
 }
 
 // const updateTodo=(todoId,newValue)=>{
@@ -48,8 +68,8 @@ const toggleactive=(itemd)=>{
    
     return (
         <div className="row checkout mx-auto mt-5 w-75">
-             
-            <div className="infobox col-md-6 bg-white p-5 m-4 text-end">
+          <div className="col-md-8">
+            <div className="infobox  bg-white p-5 m-4 text-end">
                <div className="address">
                   <div className="header">
                        <h3 className="step d-flex"></h3>
@@ -72,11 +92,9 @@ const toggleactive=(itemd)=>{
                       
 
                         <div className="items col-md-5 mt-4 mx-2 p-2">
-                            تهران،میدان انقلاب،خیابان کارگر شمالی 
+                            مثال تهران، میدان انقلاب،خیابان کارگر شمالی
                         </div>
-                        <div className="items col-md-5 mt-4 mx-2 p-2">
-                            تهران،میدان انقلاب،خیابان کارگر شمالی 
-                        </div>
+                     
                   </div>
 
 
@@ -84,6 +102,21 @@ const toggleactive=(itemd)=>{
 
                   
                </div>
+            </div>
+
+
+
+
+            <div className="infobox  bg-white p-5 m-4 text-end">
+
+            </div>
+
+
+
+
+
+
+
             </div>
             <div className="col-md-4">
                   

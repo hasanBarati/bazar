@@ -1,0 +1,9 @@
+.actived{
+    background: #fff;
+}
+.notactive{
+    background-color: #f7f7f7;
+}
+.closebtn{
+    top:15px;
+}
