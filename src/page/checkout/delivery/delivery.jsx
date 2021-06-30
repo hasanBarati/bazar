@@ -1,21 +1,22 @@
 import React from 'react'
-
-const Delivery=({toggleactive,items})=> {
-    console.log(items)
-    const handleactiveitem=(id)=>{
+import './delivery.style.css'
+import DeliveryData from './deliverydata'
+const Delivery=({toggleactiveDelivery,datas,active})=> {
+  
+    const handleactive=(id)=>{
 
   
-        toggleactive(id)
+        toggleactiveDelivery(id)
         
     }
     return (
        
   
-        items?  items.map(item=>(
-            <div className="address position-relative col-md-6">
-           <div key={item.id}  className={`${item.isCompleted?'actived':'notactive'} addressitem items  mt-4 mx-2 p-4`} 
-               onClick={()=>handleactiveitem({id:item.id})}>
-              {item.time}
+        datas?  datas.map(data=>(
+            <div className=" position-relative col-md-4">
+           <div key={data.id}  className={`${data.active?'activedelivery':'notactivedelivery'} addressitem items  mt-4  p-4`} 
+               onClick={()=>handleactive({id:data.id})}>
+              {data.time}
        
                
                 {/* <span className="mx-1" onClick={()=>edititemcall(item.key,item.text)}>+</span> */}

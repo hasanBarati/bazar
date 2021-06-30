@@ -8,9 +8,9 @@ import Delivery from './delivery/delivery'
 import './checkout.style.css'
 const Checkout=({modal,hidden,datad})=> {
 
-    const [usercredintial,setcredintial]=useState([])
-
-
+    const [usercredintial,setcredintial]=useState([{text:' مثال تهران، میدان انقلاب،خیابان کارگر شمالی'}])
+    const [active,setactive]=useState(false)
+    const [delivery,setdelivery]=useState(DeliveryData)
     const addadress=(text)=>{
  
         setcredintial([
@@ -36,6 +36,7 @@ const updatelist=(key,newtext)=>{
 
 const toggleactive=(itemd)=>{
 
+
     let activate=usercredintial.map(item =>{
         if(item.isCompleted===true){
             item.isCompleted=false
@@ -48,13 +49,26 @@ const toggleactive=(itemd)=>{
     })
     setcredintial(activate)
 
+    
+}
+
+const toggleactiveDelivery=(itemdelivery)=>{
 
 
-
-
-
-
-
+  let deliveryactiv=delivery.map(item=>{
+       if(item.active===true){
+        item.active=false
+       // setactive(false)
+       }
+       if (item.id === itemdelivery.id){
+         // console.log(item.active)
+      //   setactive(!active)
+          item.active=!item.active
+         //  setactive(!active)
+       }
+     return item
+    })
+  setdelivery(deliveryactiv)
 
 }
 
@@ -71,31 +85,11 @@ const toggleactive=(itemd)=>{
                        <h3 className="step d-flex"></h3>
                        <span className="additem" onClick={()=>modal()}>افزودن آدرس</span>
                   </div>
-                
-                  
-                    <div className="row">
-                      
-                      <Address items={usercredintial} toggleactive={toggleactive} deleteitem={deleteitem} updatelist={updatelist}/>
-                      {/* {usercredintial?usercredintial.map(item=>
-                      <Address key={item.key}
-                       item={item}
-                       deleteitem={deleteitemlist}
-                       />
-                       
-                       
-                       
-                      ):null} */}
-                      
 
-                        <div className="items col-md-5 mt-4 mx-2 p-2">
-                            مثال تهران، میدان انقلاب،خیابان کارگر شمالی
-                        </div>
-                     
+                    <div className="row">      
+                      <Address  items={usercredintial}  toggleactive={toggleactive} deleteitem={deleteitem} updatelist={updatelist}/>
+           
                   </div>
-
-
-
-
                   
                </div>
             </div>
@@ -106,30 +100,16 @@ const toggleactive=(itemd)=>{
             <div className="infobox  bg-white p-5 m-4 text-end">
             <div className="address">
                   <div className="header">
-                       <h3 className="step d-flex">زمان تحویل</h3>
+                       <h3 className="step d-flex"></h3>
                        
                   </div>
                
                     <div className="row">
-                        <Delivery items= {DeliveryData } />
-                      {/* {DeliveryData.map(delivery=>(
-                         <Delivery key={delivery.id} items={delivery} toggleactive={toggleactive}/>
-                      ))} */}
-          
+                        <Delivery datas= {DeliveryData } active={active} toggleactiveDelivery={toggleactiveDelivery} />
+                        <button class="checkoutbtn btn">پرداخت</button>
                   </div>
                </div>
             </div>
-
-
-
-
-
-           
-
-
-
-
-
 
 
             </div>

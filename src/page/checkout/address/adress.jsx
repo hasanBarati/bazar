@@ -42,8 +42,8 @@ const handleactiveitem=(id,value,active)=>{
 return (
       
         items?  items.map(item=>(
-             <div className="address position-relative col-md-6">
-            <div key={item.key}  className={`${item.isCompleted?'actived':'notactive'} addressitem items  mt-4 mx-2 p-4`} onClick={()=>handleactiveitem({id:item.key,value:item.text,active:false})}>
+             <div className="address position-relative col-md-5" key={item.key}>
+            <div key={item.key}  className={`${item.isCompleted?'actived':'notactive'} addressitem items  mt-4 mx-2 p-2`} onClick={()=>handleactiveitem({id:item.key,value:item.text,active:false})}>
                {item.text}
         
                 
