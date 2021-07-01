@@ -5,8 +5,10 @@ import {modal} from '../../redux/checkout/checkout-action'
 import Address from './address/adress'
 import DeliveryData from './delivery/deliverydata'
 import Delivery from './delivery/delivery'
+import FinalOrder from './finalorder/finaloreder'
+
 import './checkout.style.css'
-const Checkout=({modal,hidden,datad})=> {
+const Checkout=({modal,hidden,cartItems,totalprice})=> {
 
     const [usercredintial,setcredintial]=useState([{text:' مثال تهران، میدان انقلاب،خیابان کارگر شمالی'}])
     const [active,setactive]=useState(false)
@@ -106,15 +108,17 @@ const toggleactiveDelivery=(itemdelivery)=>{
                
                     <div className="row">
                         <Delivery datas= {DeliveryData } active={active} toggleactiveDelivery={toggleactiveDelivery} />
-                        <button class="checkoutbtn btn">پرداخت</button>
+                        <button class=" pay btn">پرداخت</button>
                   </div>
                </div>
             </div>
 
 
             </div>
-            <div className="col-md-4">
-                  
+            <div className="col-md-4 mt-5">
+              <FinalOrder />
+             
+                 
             </div>
 
 
@@ -132,7 +136,8 @@ const toggleactiveDelivery=(itemdelivery)=>{
 
 const mapStateToProps=state=>({
     hidden:state.checkout.hidden,
-    cartItems:state.cart.cartItems
+    cartItems:state.cart.cartItems,
+
 })
 
 const mapDispatchToProps=dispatch=>({

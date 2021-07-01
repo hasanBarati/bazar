@@ -29,3 +29,9 @@ h3.step:before {
     min-height: 100px;
     
 }
+.pay{
+    background-color: #009e7f;
+    color:white;
+    margin: 50px auto 0px auto;
+    padding: 10px 0px;
+}
