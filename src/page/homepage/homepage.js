@@ -12,7 +12,7 @@ const HomePage=({data,fetchStart})=>{
   },[fetchStart] )
   
     return(
-        <div>
+        <div className="mt-5">
 
              <HeaderSlider/>
              {data.map(({id,...otherdata})=>

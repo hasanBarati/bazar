@@ -4,7 +4,9 @@
     border-radius: 6px;
     border: 1px solid rgb(243, 243, 243);
 }
-
+.caticon{
+    border: 1px solid rgb(243, 243, 243);
+}
 .cardsection:hover{
     box-shadow: rgb(0 0 0 / 8%) 0px 2px 4px;
     transform: translateY(-5px);
@@ -14,3 +16,49 @@
     border-color: rgb(1, 147, 118);
     color: rgb(255, 255, 255);
 }
+.filter,.close{
+    display: none;
+}
+@media only screen and (max-width: 600px) {
+    .checkout{
+       width: 100% !important;
+    }
+    .filter{
+        display: block;
+        top: 10%!important;
+        background: white;
+        padding: 10px;
+        width: 100%;
+        right: 0;
+        box-shadow: 0 0 1px #929292;
+    }
+    span.close {
+        width: 50px;
+        background-color: gray;
+        margin: 0 auto;
+        color: white;
+        font-size: 20px;
+        border-radius: 50%;
+        padding: 10px 5px;
+        bottom: 5px;
+    }
+    .categorybox{
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+   .categoryicon{
+        display: none ;
+        width: 100% !important;
+        background: white;
+        margin: 0 auto;
+        bottom: 0;
+    
+    }
+    .caticon{
+        width: 45%;
+        background-color:#f8f9fa;
+    }
+    .close{
+        display: block;
+    }
+  }

@@ -13,8 +13,11 @@ h3.step:before {
     justify-content: center;
     background-color: rgb(0, 158, 127);
     margin-right: 15px;
+    margin-left: 5px;
 }
-
+h3.step2:before{
+    counter-increment: section-counter 2;
+}
 .checkout .header {
     display: flex;
     justify-content: space-between;

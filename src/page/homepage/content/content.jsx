@@ -20,12 +20,33 @@ const Content=({title,items})=>{
             
             <Swiper
             spaceBetween={10}
-            slidesPerView={5}
+            slidesPerView={2}
             navigation
             pagination={{ 'clickable': true,"dynamicBullets": true}}
         
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log('slide change')}
+
+            breakpoints={{
+              // when window width is >= 640px
+              640: {
+               
+                slidesPerView: 1,
+              },
+              // when window width is >= 768px
+              768: {
+               
+                slidesPerView: 4,
+              },
+              1024: {
+               
+                slidesPerView: 5,
+              },
+            }}
+
+
+
+
           >
               {items.map(item=> 
             <SwiperSlide>   <CardSingle  key={item.id} item={item} /></SwiperSlide>

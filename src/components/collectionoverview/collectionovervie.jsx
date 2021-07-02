@@ -7,7 +7,7 @@ const CollectionOverview=({isLoading,data})=> {
   
     return (
        
-         <div className="row m-4">
+         <div className="row  m-4">
             {data.map(({id,...otherprops})=>(
             <Card  key={id} {...otherprops}/>
             ))}

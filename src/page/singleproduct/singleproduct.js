@@ -23,7 +23,7 @@ const SingleProduct=({location,addItem,data})=> {
                   <span className="decrease d-none">-</span>   افزودن به سبد خرید   <span className="increase">+</span>
                  </button>
             </div>
-            <div className="productimg col-md-6 bg-white">
+            <div className="productimg col-md-6 bg-white p-5">
                 <img src={imgurl} />
                 
              </div>

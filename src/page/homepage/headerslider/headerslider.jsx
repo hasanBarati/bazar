@@ -24,10 +24,10 @@ const HeaderSlider=()=> {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
-      <SwiperSlide><img src="https://mimazy.com/storage/images/banners/2021/05/7sgbv7CaOXIRbpyKNShMEygpNNrvLSZynPLFMxqvTCYUsnQsCjoukzoTDP1mrpNq-1350x400.png" /></SwiperSlide>
-      <SwiperSlide><img src="https://mimazy.com/storage/images/banners/2021/05/Gy11yC7Sr6SyXMJWNnqkjDosRPtyHWniiLM0QbHwkcKVkjLp7epURwb5idh7VHDc-1350x400.png" /></SwiperSlide>
-      <SwiperSlide><img src="https://mimazy.com/storage/images/banners/2021/04/uOyKqr18QaqBeOZofxoa5ADSQNBujvjwKrn5pIg4b6vD6yjGafFqTRMDVHv3WkPv-1350x400.png" /></SwiperSlide>
-      <SwiperSlide><img src="https://mimazy.com/storage/images/banners/2021/04/uSyjfKUcbt3JVHNZ3j9OTKJxRF0aWOZTeCLruTWjQsPSDvjNVzFuSnLek34apsoB-1350x400.png" /></SwiperSlide>
+      <SwiperSlide><img className="w-100" src="https://mimazy.com/storage/images/banners/2021/05/7sgbv7CaOXIRbpyKNShMEygpNNrvLSZynPLFMxqvTCYUsnQsCjoukzoTDP1mrpNq-1350x400.png" /></SwiperSlide>
+      <SwiperSlide><img className="w-100" src="https://mimazy.com/storage/images/banners/2021/05/Gy11yC7Sr6SyXMJWNnqkjDosRPtyHWniiLM0QbHwkcKVkjLp7epURwb5idh7VHDc-1350x400.png" /></SwiperSlide>
+      <SwiperSlide><img className="w-100" src="https://mimazy.com/storage/images/banners/2021/04/uOyKqr18QaqBeOZofxoa5ADSQNBujvjwKrn5pIg4b6vD6yjGafFqTRMDVHv3WkPv-1350x400.png" /></SwiperSlide>
+      <SwiperSlide><img className="w-100" src="https://mimazy.com/storage/images/banners/2021/04/uSyjfKUcbt3JVHNZ3j9OTKJxRF0aWOZTeCLruTWjQsPSDvjNVzFuSnLek34apsoB-1350x400.png" /></SwiperSlide>
    
     </Swiper>
         </div>

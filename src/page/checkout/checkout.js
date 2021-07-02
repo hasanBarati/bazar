@@ -84,8 +84,8 @@ const toggleactiveDelivery=(itemdelivery)=>{
             <div className="infobox  bg-white p-5 m-4 text-end">
                <div className="address">
                   <div className="header">
-                       <h3 className="step d-flex"></h3>
-                       <span className="additem" onClick={()=>modal()}>افزودن آدرس</span>
+                       <h3 className="step d-flex ">آدرس شما</h3>
+                       <span className="additem" onClick={()=>modal()}>  افزودن آدرس  +</span>
                   </div>
 
                     <div className="row">      
@@ -102,7 +102,7 @@ const toggleactiveDelivery=(itemdelivery)=>{
             <div className="infobox  bg-white p-5 m-4 text-end">
             <div className="address">
                   <div className="header">
-                       <h3 className="step d-flex"></h3>
+                       <h3 className="step step2 d-flex">زمان تحویل</h3>
                        
                   </div>
                

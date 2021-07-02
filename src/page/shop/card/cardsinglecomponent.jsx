@@ -11,7 +11,7 @@ const CardSingle=({item,addItem,match})=> {
     
 
          
-        <div  className="cardsection col-md-3   p-0 bg-white ">
+        <div  className="cardsection col-lg-3 col-md-6   p-0 bg-white ">
 
 
             <Link to={{ 

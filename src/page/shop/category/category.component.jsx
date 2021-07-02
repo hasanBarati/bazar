@@ -9,14 +9,17 @@ function Category({match}) {
 
    
     return (
-        <div className="row m-4">
+        <div className="row  m-4">
            
                     {/* {viewdata.map(({id,...otherdata})=>
                        <Card key={id} {...otherdata}/>
                        
                    )}   */}
+                  
+                   <Card  items={viewdata} match={match}/>
+                  
                 
-                       <Card  items={viewdata} match={match}/>
+                       
                        
                         
 

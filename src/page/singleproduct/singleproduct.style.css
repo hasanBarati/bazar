@@ -9,6 +9,9 @@ button.buy{
 .relatedproduct{
     margin:50px auto;
 }
+.productimg img{
+    max-width: 400px;
+}
 /* .relatedproduct .cardsection{
     margin:0 5px;
 } */

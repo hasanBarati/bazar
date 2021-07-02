@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 import './shop.style.css'
 import { Link,Route } from 'react-router-dom'
 import Fruit from '../../assests/svg/fruit.svg'
@@ -19,7 +19,7 @@ const Shop=({match,fetchStart,data,isCollectionsFetching})=>{
     /*useEffect(()=>{
         AddCollectionAndDoc ('collections',viewdata.map(({title,items})=>({title,items})))
        })*/
-
+     const [showfilter,setshowfilter]=useState(true)
      const viewdata= Object.keys(Data).map(key=>Data[key])
      useEffect(()=>{
        AddCollectionAndDoc ('collections',viewdata.map(({title,items})=>({title,items})))
@@ -31,7 +31,7 @@ const Shop=({match,fetchStart,data,isCollectionsFetching})=>{
     return(
        
              <div className="row mb-4">
-               <div className="col-md-9 mb-4">
+               <div className="col-md-9  mb-4"  >
                  
                       <Route exact path={`${match.path}`} render={(props)=><Collectionoverviewswithspinner  isLoading={isCollectionsFetching} {...props}/>}  /> 
                       <Route path={`${match.path}/:category/:title`} component={Category}/>
@@ -40,23 +40,31 @@ const Shop=({match,fetchStart,data,isCollectionsFetching})=>{
                       
             </div>
             <div className="col-md-3 mb-4">
-                <div className="row m-4">
-                {viewdata.map(({id,title,icon})=>
-                    <div className="col-md-5 bg-white m-1 p-3">
-                    <Link to={`${match.path}/category/${title}`}>
+                <div className="row m-4 mx-auto">
+                <div className="filter  position-fixed " onClick={()=>setshowfilter(false)}>فیلتر </div>
+                    <div className={`${showfilter?"row categoryicon position-fixed w-25 ":"d-block position-fixed w-100 bottom-0 right-0  "}`}>
+                   <div><span className="close position-relative " onClick={()=>setshowfilter(true)}>x</span></div> 
+                   <div className="categorybox d-flex flex-direction-row justify-content-center   flex-wrap">
+                        {viewdata.map(({id,title,icon})=>
                             
-                        
-                        <div className="icon">
-                        <img src={icon} width="100" height="50" /> 
-                         
-                        </div>
-                        <p className="text-center mt-2">{title}</p>
-                    </Link>  
-                    </div>
-                    )}
+                            <div className="col-md-5 caticon bg-white  mr-1 p-3">
+                            <Link to={`${match.path}/category/${title}`}>
+                                    
+                                
+                                <div className="icon">
+                                <img src={icon} width="100" height="50" /> 
+                                
+                                </div>
+                                <p className="text-center mt-2">{title}</p>
+                            </Link>  
+                            </div>
+                            )}
+
+                   </div>
+                
            
                    
-                    
+                  </div>    
                 </div>
                     
             </div>
