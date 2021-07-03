@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/my-app/static/css/main.6342e01c.chunk.css",
+    "main.js": "/my-app/static/js/main.e41a46a1.chunk.js",
+    "main.js.map": "/my-app/static/js/main.e41a46a1.chunk.js.map",
+    "runtime-main.js": "/my-app/static/js/runtime-main.8d27ad6e.js",
+    "runtime-main.js.map": "/my-app/static/js/runtime-main.8d27ad6e.js.map",
+    "static/css/2.3e3225de.chunk.css": "/my-app/static/css/2.3e3225de.chunk.css",
+    "static/js/2.493c2cff.chunk.js": "/my-app/static/js/2.493c2cff.chunk.js",
+    "static/js/2.493c2cff.chunk.js.map": "/my-app/static/js/2.493c2cff.chunk.js.map",
+    "static/js/3.464be040.chunk.js": "/my-app/static/js/3.464be040.chunk.js",
+    "static/js/3.464be040.chunk.js.map": "/my-app/static/js/3.464be040.chunk.js.map",
+    "index.html": "/my-app/index.html",
+    "static/css/2.3e3225de.chunk.css.map": "/my-app/static/css/2.3e3225de.chunk.css.map",
+    "static/css/main.6342e01c.chunk.css.map": "/my-app/static/css/main.6342e01c.chunk.css.map",
+    "static/js/2.493c2cff.chunk.js.LICENSE.txt": "/my-app/static/js/2.493c2cff.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/my-app/static/media/B-NAZANIN.d7478a9e.TTF",
+    "static/media/breakfast.3cbd7285.svg": "/my-app/static/media/breakfast.3cbd7285.svg",
+    "static/media/cart.acce0ea3.svg": "/my-app/static/media/cart.acce0ea3.svg",
+    "static/media/drink.e2c94a69.svg": "/my-app/static/media/drink.e2c94a69.svg",
+    "static/media/fruit.9f46813a.svg": "/my-app/static/media/fruit.9f46813a.svg",
+    "static/media/meat.7831f82a.svg": "/my-app/static/media/meat.7831f82a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8d27ad6e.js",
+    "static/css/2.3e3225de.chunk.css",
+    "static/js/2.493c2cff.chunk.js",
+    "static/css/main.6342e01c.chunk.css",
+    "static/js/main.e41a46a1.chunk.js"
+  ]
+}
