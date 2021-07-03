@@ -13,7 +13,7 @@ const Delivery=({toggleactiveDelivery,datas,active})=> {
        
   
         datas?  datas.map(data=>(
-            <div className=" position-relative col-md-4">
+            <div className=" position-relative col-md-4" key={data.id}>
            <div key={data.id}  className={`${data.active?'activedelivery':'notactivedelivery'} addressitem items  mt-4  p-4`} 
                onClick={()=>handleactive({id:data.id})}>
               {data.time}

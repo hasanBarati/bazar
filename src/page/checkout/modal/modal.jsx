@@ -49,19 +49,20 @@ const Modal=({modal,item,onSubmit,edititem})=> {
             <div className="modal-dialog">
                 <div className="modal-content">
                 <div className="modal-header">
-                    <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" className="btn-close" onClick={modal} aria-label="Close"></button>
+                <button type="button" className="btn-close" onClick={modal} aria-label="Close"></button>
+                    <h5 className="modal-title" id="exampleModalLabel">افزودن آدرس</h5>
+                   
                 </div>
                 <div className="modal-body">
                     
-                    <input type="text" name='items' value={items} onChange={handleChange}/>
+                 
                    
-                    <textarea />
+                    <textarea type="text" name='items' className="w-75" value={items} onChange={handleChange} />
                 </div>
                 <div className="modal-footer">
                    
-                <button type="button" className="btn btn-primary" onClick={handleSubmit}>Save changes</button>
-                <button type="button" className="btn btn-secondery" onClick={handleEdit}>edit</button>
+                <button type="button" className="btn btn-primary" onClick={handleSubmit}>افزودن</button>
+             
                 </div>
                 </div>
             </div>

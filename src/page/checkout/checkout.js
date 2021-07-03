@@ -108,7 +108,7 @@ const toggleactiveDelivery=(itemdelivery)=>{
                
                     <div className="row">
                         <Delivery datas= {DeliveryData } active={active} toggleactiveDelivery={toggleactiveDelivery} />
-                        <button class=" pay btn">پرداخت</button>
+                        <button className=" pay btn">پرداخت</button>
                   </div>
                </div>
             </div>

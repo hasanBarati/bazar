@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+
 import './App.css';
-import {Route,Switch,Link} from 'react-router-dom'
+import {Route,Switch} from 'react-router-dom'
 import Header from './components/header/header.component'
 import Shop from './page/shop/shop'
 import HomePage from './page/homepage/homepage'

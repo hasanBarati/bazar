@@ -43,14 +43,14 @@ return (
       
         items?  items.map(item=>(
              <div className="address position-relative col-md-5" key={item.key}>
-            <div key={item.key}  className={`${item.isCompleted?'actived':'notactive'} addressitem items  mt-4 mx-2 p-2`} onClick={()=>handleactiveitem({id:item.key,value:item.text,active:false})}>
+            <div  key={item.key} className={`${item.isCompleted?'actived':'notactive'} addressitem items  mt-4 mx-2 p-2`} onClick={()=>handleactiveitem({id:item.key,value:item.text,active:false})}>
                {item.text}
         
                 
                  {/* <span className="mx-1" onClick={()=>edititemcall(item.key,item.text)}>+</span> */}
             </div>
                
-               <span className="closebtn position-absolute  px-2 rounded-circle text-white bg-danger mx-1 cursor-pointer" onClick={()=>deleteitem(item.key)}>x</span>
+               <span className="closebtn position-absolute   px-2 rounded-circle text-white bg-danger mx-1 cursor-pointer" onClick={()=>deleteitem(item.key)}>x</span>
                </div>
                )):<p>list empty</p>
                

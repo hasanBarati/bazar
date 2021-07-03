@@ -17,7 +17,7 @@ const Header=()=>{
         <button onClick={togglemenu} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a className="navbar-brand" href="#">Navbar</a>
         <div className={`${show? 'd-block w-100':'collapse navbar-collapse'}`} id="navbarNavDropdown">
             <ul className="navbar-nav ">
                        <li className="nav-item"><Link to="/" className="nav-link">خانه</Link></li>

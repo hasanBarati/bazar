@@ -1,18 +1,17 @@
 import React,{useEffect,useState} from 'react'
 import './shop.style.css'
 import { Link,Route } from 'react-router-dom'
-import Fruit from '../../assests/svg/fruit.svg'
-import Meat from '../../assests/svg/meat.svg'
-import {createStructuredSelector} from 'reselect'
+
+//import {createStructuredSelector} from 'reselect'
 import {AddCollectionAndDoc} from '../../firebase/firebase'
-import {selectIsCollectionFetching,selectIsCollectionsLoaded} from '../../redux/shop/shop-selector'
+//import {selectIsCollectionFetching,selectIsCollectionsLoaded} from '../../redux/shop/shop-selector'
 import Category from './category/category.component'
 import {connect} from 'react-redux'
 import Data from '../../data'
 import {fetchStart} from '../../redux/shop/shop-actions'
 import WithSpinner from '../../components/withspinner/whitspinner'
 import CollectionOverview from '../../components/collectionoverview/collectionovervie'
-import SingleProduct from '../../page/singleproduct/singleproduct'
+
 const Collectionoverviewswithspinner= WithSpinner(CollectionOverview)
 const Shop=({match,fetchStart,data,isCollectionsFetching})=>{
  
@@ -22,7 +21,7 @@ const Shop=({match,fetchStart,data,isCollectionsFetching})=>{
      const [showfilter,setshowfilter]=useState(true)
      const viewdata= Object.keys(Data).map(key=>Data[key])
      useEffect(()=>{
-       AddCollectionAndDoc ('collections',viewdata.map(({title,items})=>({title,items})))
+    //   AddCollectionAndDoc ('collections',viewdata.map(({title,items})=>({title,items})))
        fetchStart()
   
      },[fetchStart] )
@@ -47,8 +46,8 @@ const Shop=({match,fetchStart,data,isCollectionsFetching})=>{
                    <div className="categorybox d-flex flex-direction-row justify-content-center   flex-wrap">
                         {viewdata.map(({id,title,icon})=>
                             
-                            <div className="col-md-5 caticon bg-white  mr-1 p-3">
-                            <Link to={`${match.path}/category/${title}`}>
+                            <div key={id} className="col-md-5 caticon bg-white  mr-1 p-3">
+                            <Link  to={`${match.path}/category/${title}`}>
                                     
                                 
                                 <div className="icon">
@@ -80,10 +79,6 @@ const Shop=({match,fetchStart,data,isCollectionsFetching})=>{
 }
 
 
-// const mapStateToProps=createStructuredSelector({
-//     isCollectionsFetching:selectIsCollectionFetching
-//    //isCollectionsLoaded:selectIsCollectionsLoaded
-//   })
 const mapStateToProps=state=>({
     data:state.shop.shopdata? Object.keys(state.shop.shopdata).map(key=>state.shop.shopdata[key]):[],
     isFetching:state.shop.isFetching
