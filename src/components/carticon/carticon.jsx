@@ -10,7 +10,7 @@ function CartIcon({ itemscount,totalprice,toggleCart}) {
 
     return (
         <div className="cartbox p-3 rounded text-white" onClick={toggleCart}>
-            <div className="d-flex justify-content-between mb-2">
+            <div className="d-flex justify-content-between mb-2 pricebox">
                <ShopingIcon className="color-green" />
                <span>{itemscount}</span>
             </div>

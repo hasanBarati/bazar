@@ -20,12 +20,17 @@
     display: none;
 }
 @media only screen and (max-width: 600px) {
+    .navbar{
+        position: fixed;
+        top: 0px;
+        width: 100%;
+    }
     .checkout{
        width: 100% !important;
     }
     .filter{
         display: block;
-        top: 10%!important;
+        top: 55px !important;
         background: white;
         padding: 10px;
         width: 100%;
@@ -61,4 +66,9 @@
     .close{
         display: block;
     }
+
+
+
+
+
   }

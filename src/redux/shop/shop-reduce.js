@@ -1,7 +1,7 @@
 import SHOPTYPE from './shop-type'
 import Data from '../../data'
 const INITIAL_STATE={
-    shopdata:Data,
+    shopdata:null,
     isFetching:false,
     errorMessage:undefined
 }

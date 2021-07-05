@@ -1,7 +1,9 @@
 {
   "name": "bazar",
   "version": "0.1.0",
-  "homepage": "https://hasanb69.github.io/bazar/",
+
+
+  "homepage": "https://hasanb69.github.io",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
