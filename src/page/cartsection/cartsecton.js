@@ -7,10 +7,10 @@ import {connect} from 'react-redux'
 import {createStructuredSelector} from 'reselect'
 const CartSection=({ hidden})=> {
     return (
-        <div className="cartsection position-fixed top-0 start-10 " >
+        <div className={ `${hidden? "h-0":"h-100"} cartsection position-fixed top-0 start-10` } >
             {hidden?<CartIcon  />: null}
             
-             {hidden?null:<CartDropDown />}
+             {hidden?null:<CartDropDown  />}
            
         </div>
     )
